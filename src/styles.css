@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --grey: #f5f5f5;
+    --yellow: #ffd500;
+    --blue: #00b2db;
+    --blueLight: #f8f7fd;
+    --greyText: #767487;
+    --red: #bc264c;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  p {
+    margin: 4px 0;
+  }
+  input:focus{
+    outline: none;
+}
+  .grey{
+    color: var(--greyText);
+  }
+button {
+    cursor: pointer;
+    border: 0;
+    background-color: transparent;
+}
+.border {
+    border: 2px solid  var(--grey);
+    border-radius: 4px;
+}
+.border-bottom {
+    border-bottom: 2px solid  var(--grey);
+}
+.text-center {
+    text-align: center;
+}

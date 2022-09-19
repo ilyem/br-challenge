@@ -1,0 +1,14 @@
+<div class="wrapper">
+    <div class="selection border"  [ngClass]="{'placeholder': !selectedOption}" (click)="toggleShowOptions()">
+        <p>{{selectedOption? selectedOption : placeholder }}</p>
+        <app-icon name="arrow-down"></app-icon>
+    </div>
+     <div class="options" *ngIf="showOptions">
+        <ng-content></ng-content>
+        <ul>
+            <li *ngFor="let option of options" (click)="onOptionClick(option)">
+              {{option}}
+            </li>
+        </ul>
+    </div>
+</div>
