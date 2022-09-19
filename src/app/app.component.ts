@@ -52,7 +52,6 @@ export class AppComponent implements OnInit {
 
   getFilters(): void {
     this.configService.searchFilter().subscribe((data) => {
-      console.log(data);
       this.filters = data;
       this.filterOptions = this.getFilterOptions(data);
       this.filterPropertiesLookup = data.reduce(
@@ -122,24 +121,19 @@ export class AppComponent implements OnInit {
 
   handleFilterSearch(event: any) {
     const allFilters = this.getFilterOptions(this.filters);
-    console.log(event?.target?.value);
     this.filterOptions = allFilters.filter((option) =>
       option.includes(event?.target?.value)
     );
   }
   handlePropertySearch(event: any, filterType: string) {
-    console.log(event.target.value, filterType);
     const searchTerm = event.target.value;
     const properties = this.getPropertyOptions(filterType);
     this.filterPropertiesLookup[filterType] = properties.filter((prop) =>
       prop.includes(searchTerm)
     );
   }
-  handleAddValue(event: any) {
-    console.log(event);
-  }
+
   handleAddNumberValue(event: any, value: (string | number)[]) {
-    console.log(value, event);
     value.push(event);
   }
   handleApplyFilters() {

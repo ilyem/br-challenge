@@ -13,9 +13,9 @@ class="filterWrapper border-bottom"
 (mouseenter)="hovered=selectedFilter.type+i"  
 (mouseleave)="hovered=''">
   <div class="filterTitle">
-    <div class="flex">
-      <span class="grey">{{i+1}}. Step: </span>
-      <span class="step">{{selectedFilter.type || 'Unnamed step'}}</span>
+    <div class="flex title">
+      <p class="grey">{{i+1}}. Step:</p>
+      <p class="step">{{selectedFilter.type || 'Unnamed step'}}</p>
      <app-icon name="edit"></app-icon>
     </div>
   <div class="flex" *ngIf="hovered == selectedFilter.type+i">

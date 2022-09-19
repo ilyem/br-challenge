@@ -6,7 +6,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   templateUrl: './select.component.html',
   styleUrls: ['./select.component.css'],
 })
-export class SelectComponent implements OnInit {
+export class SelectComponent {
   @Input() options: string[] = [];
   @Input() placeholder: string = 'Select an option';
   @Input() selectedOption: string | undefined;
@@ -14,9 +14,6 @@ export class SelectComponent implements OnInit {
   showOptions: boolean = false;
   toggleShowOptions() {
     this.showOptions = !this.showOptions;
-  }
-  ngOnInit(): void {
-    console.log('here', this.selectedOption);
   }
   onOptionClick(option: string) {
     this.toggleShowOptions();
